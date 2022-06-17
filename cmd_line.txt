@@ -1,8 +1,10 @@
-1. 
+1. Create two folders project1 and project2 locally
+
 $mkdir project1 project2
 $git init
 
-2.
+2. Switch to project1
+
 $cd project1
 $ git init
 $ git remote add origin  https://github.com/Ratchet-prog/test_project.git
@@ -11,63 +13,60 @@ $git status
 $git add -A
 $git commit
 
-3.
+3. Switch to a new branch - 'staging'.
+
 $ git checkout -b staging
 
-4.
-$ touch test1.txt
+4. Add a file in it - 'test1' and add content to it 'This is first commit'.
 
-5.
+$ touch test1.txt
 $ git status
 $ git add -A
 $ git commit -m "First commit"
+
+5. Push it to github.
 $ git push origin staging
 
-6.
+6. Move to folder project2
 $ cd project2
-$ git init
-$ git remote add origin  https://github.com/Ratchet-prog/test_project.git
 
-7.
-$ git clone https://github.com/Ratchet-prog/test_project.git
-$ cd test_project
+7.Clone the repo in project2.
+$ git clone https://github.com/Ratchet-prog/test_project.git .
 
-8.
+8. Switch to staging.
 $ git checkout staging
 
-9.
-$ git start test1.txt
-$ git status
-$ git add -A
+9. Change the text in file 'test1'
+$ start test1.txt
 
-10.
-$ git commit -m "Second commit"
+
+10. Commit and push to remote branch
 $ git push origin staging
 
-11.
-$ cd .. cd ..
+11. Move to project1
+$ cd .. 
 $ cd project1
 
-12. 
+12. Switch to staging branch
 $ git checkout staging
 
-13.
+13. Change the text in file 'test1' to 'This is third commit
 change in file test1 "this is third commit"
 $ start test1.txt
 
-14.
-$ git add -A
-$ git commit -m "third commit"
+14. Commit and push to remote branch
+$ git commit -am "Third commit"
 $ git push origin staging
 
 "got an error because the head of remote is ahead of local"
 
-15. 
-$ git checkout -b master
+15. Switch to master
+$ git checkout master
     
-16. as master do not present in start it directly merged with staging
+16. Merge staging branch into master.
+as master do not present in start it directly merged with staging
 
-17. 
+17. Create a new branch testing.
 $ git checkout -b testing
 
 18. changed test1 to "A is an alphabet"
@@ -78,35 +77,40 @@ $ git checkout -b testing
     7th commit was 
     $ git commit -m "G"
 
-20. git push origin testing
+20. Push the branch to github
+    $git push origin testing
 
-21. git checkout master
+21. Checkout to master.
+    $git checkout master
 
 22. change test1 text to "1 is a number"
     $ git add -A
     $ git commit -m "1"
+
 23. 7 more commits till 7 is a number
     
-24. git push origin master
+24. Push master branch to github.
+ git push origin master
 
-25. 
+25. Now, rebase testing into master
 $ git rebase testing
-    it will show merge conflicts 7 time which are needed to be resolved
+    it will show merge conflicts 7 times which are needed to be resolved
 
-26.
+26. Move to project2.
 cd/project2
 
-27. $git fetch origin testing
+27.Track testing branch. 
+$git fetch origin testing
 $ git branch testing -t origin/testing
 
-28.
-$ git checkout master
+28. Checkout to master.
+$ git checkout -b master
 
-29.
+29. Merge branch testing into master.
 $ git merge testing
 
 conflicts occured
 
-30.
+30. Share your views about the difference between master and testing.
 master of project 2 doesn't have test1 file
 
