@@ -1,0 +1,112 @@
+1. 
+$mkdir project1 project2
+$git init
+
+2.
+$cd project1
+$ git init
+$ git remote add origin  https://github.com/Ratchet-prog/test_project.git
+$touch Readme.md
+$git status
+$git add -A
+$git commit
+
+3.
+$ git checkout -b staging
+
+4.
+$ touch test1.txt
+
+5.
+$ git status
+$ git add -A
+$ git commit -m "First commit"
+$ git push origin staging
+
+6.
+$ cd project2
+$ git init
+$ git remote add origin  https://github.com/Ratchet-prog/test_project.git
+
+7.
+$ git clone https://github.com/Ratchet-prog/test_project.git
+$ cd test_project
+
+8.
+$ git checkout staging
+
+9.
+$ git start test1.txt
+$ git status
+$ git add -A
+
+10.
+$ git commit -m "Second commit"
+$ git push origin staging
+
+11.
+$ cd .. cd ..
+$ cd project1
+
+12. 
+$ git checkout staging
+
+13.
+change in file test1 "this is third commit"
+$ start test1.txt
+
+14.
+$ git add -A
+$ git commit -m "third commit"
+$ git push origin staging
+
+"got an error because the head of remote is ahead of local"
+
+15. 
+$ git checkout -b master
+    
+16. as master do not present in start it directly merged with staging
+
+17. 
+$ git checkout -b testing
+
+18. changed test1 to "A is an alphabet"
+    $ git add -A
+    $ git commit -m "A"
+
+19. repeat 7 times 
+    7th commit was 
+    $ git commit -m "G"
+
+20. git push origin testing
+
+21. git checkout master
+
+22. change test1 text to "1 is a number"
+    $ git add -A
+    $ git commit -m "1"
+23. 7 more commits till 7 is a number
+    
+24. git push origin master
+
+25. 
+$ git rebase testing
+    it will show merge conflicts 7 time which are needed to be resolved
+
+26.
+cd/project2
+
+27. $git fetch origin testing
+$ git branch testing -t origin/testing
+
+28.
+$ git checkout master
+
+29.
+$ git merge testing
+
+conflicts occured
+
+30.
+master of project 2 doesn't have test1 file
+
